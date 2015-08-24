@@ -1,0 +1,36 @@
+@import "node_modules/susy/sass/susy";
+
+//breakpoints
+$Xlarge: (min-width 1380px);
+$large: max-width 1030px;
+$small: max-width 675px;
+$smallest: max-width 400px;
+
+$susy: (
+    /*the basics*/
+    flow: ltr,
+    math: fluid,
+    output: float,
+    gutter-position: after,
+    container: 63em,
+    container-position: center,    
+    columns: 12,
+    gutters: 0.2,
+    column-width: 2,
+    last-flow: to,
+    debug: (
+        image: show,
+        color: blue,
+        output: overlay,
+        toggle: top right,
+    ),
+    use-custom: (
+        background-image: true,
+        background-options: false,
+        box-sizing: true,
+        clearfix: false,
+        rem: true,
+    )      
+);
+
+$map: layout(12 0);

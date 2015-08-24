@@ -1,0 +1,284 @@
+header{
+	position:absolute;
+	width:100%;
+
+	section{
+		width:100%;
+		background-color: $main_background_color;
+
+		nav{
+			font-family: 'Roboto', sans-serif;
+			font-weight: 500;			
+			display: inline-block;
+			height:6em;
+			width: 100%;
+			padding: 0 7em;
+			box-sizing: border-box;
+
+			@include susy-media($large) {
+				padding: 0 3em;
+			}
+			@include susy-media($small) {
+				padding: 0 2em;
+			}
+
+			a.img_wrapper{
+				@include span(2 of 12);
+				position:relative;
+				display: inline-block;
+				height: 100%;
+
+				img{
+					position:absolute;
+					top: 0;
+					bottom:0;
+					left:0;
+					margin:auto;
+					max-width: 100%;
+				}
+
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+
+			div{
+				@include span(last 10 of 12);
+				display: inline;
+
+				ul{
+		           	float:right;
+		            text-align: right;
+		            height: 100%;
+
+		            @include susy-media($small) {
+		            	width: auto;
+		            	padding: 0 1em;
+    					box-sizing: border-box;
+		            }
+
+					li{
+						font-weight: 600;
+						font-size: 1em;
+						padding: 0 0 0 2em;
+
+						@include susy-media($small) {
+							width: auto;
+							float:left;
+							padding: 0 0.5em;
+							font-size: 0.9em;
+							max-width: 6em;
+						}
+
+		                a{
+		                	float:right;
+		                	color: $iwink_red;
+		                	line-height: 6em;
+
+		                	@include susy-media($small) {
+		                		line-height: normal;
+		                		text-align: left;
+		                	}
+
+		                	&:hover{
+		                		color:black;
+		                	}
+		                }
+					}
+				}
+			}			
+		}
+
+		nav#slide_menu{
+			position:fixed;
+			padding: 0;
+			left:-$slidermenu_width;
+			top:0;
+			width:$slidermenu_width;
+			height:100%;
+			background-color:$slider_background;
+			overflow-y: auto;
+
+			div.shadow{
+			    height: 100%;
+			    position: absolute;
+			    width: 15px;
+			    right: 0;
+			    top: 0;
+			    z-index: 10;
+			    -webkit-box-shadow: -7px 0 7px -1px rgba(0, 0, 0, 0.5) inset;
+			    box-shadow: -7px 0 7px -1px rgba(0, 0, 0, 0.5) inset;			
+			}
+
+			ul{
+				li{
+					width: 100%;
+					display: inline-block;
+
+					a{
+						display: inline-block;
+						padding: 15px 8px 15px 13px;
+						color:#F5F4F4;
+						text-align: left;
+    					border-bottom: 1px solid #2B2A2A;
+    					border-top: 1px solid #5D5959;	
+    					box-sizing:border-box;
+
+    					span{
+    						display: inline-block;
+    						padding-right: 1em;
+    					}					
+					}
+				}
+			}
+		}
+
+		nav.main_nav{
+			@include susy-media($small) {
+				ul{
+					padding: 1.9em 0.5em;
+					box-sizing: border-box;
+
+					li{
+						margin: 0 0.3em;
+					}
+				}
+			}
+
+			@include susy-media($smallest) {
+				padding: 0 1em;
+				ul{
+					padding: 1.9em 0 1.9em 1em;
+					width: 100%;
+
+					li{
+						margin: 0;
+						max-width: 6em;
+						padding-right: 0.9em;
+						padding-left: 0;
+
+						a{
+							font-size: 0.9em;
+						}
+					}
+				}
+			}
+		}
+
+		nav.sub_nav{
+			background-color: rgba(255,255,255,0);
+			font-family: 'Roboto Condensed', sans-serif;
+			font-weight: 200;
+			height:auto;
+
+			div{
+				position: relative;
+				height:4em;
+				width:100%;	
+
+				a.img_wrapper_small{
+					display: none;
+					position: absolute;
+					top: 1.4em;
+					left: -6em;
+
+					@include susy-media($large) {
+						display: none!important;
+					}
+
+					img{
+						width: 4em;
+					}
+				}
+
+				ul{
+					height: 100%;
+					float:left;
+
+					@include susy-media($small) {
+						display: none;
+					}
+
+					li{
+						padding:0 2em 0 0;
+
+						a{
+							text-transform: uppercase;
+							color:white;
+							line-height: 4em;
+
+							&:hover{
+								color:$iwink_red;
+							}
+						}
+					}
+				}
+
+				span#small_menu{
+					@include span(last 1 of 12);
+					padding: 0.7em 0 0.7em;
+					display: none;
+					font-size: 1.7em;
+					color:white;
+
+					@include susy-media($small) {
+						display: block;
+					}
+
+					&:hover{
+						cursor: pointer;
+					}
+				}
+
+				form{
+					@include span(last 2 of 12);
+					box-sizing:border-box;
+					padding:1.2em 0 1em 0;
+					margin:0;					
+
+					@include susy-media($small) {
+						@include span(6 of 12);
+					}
+
+					div.form_group{
+						width: 9em;
+						height:auto;
+						float:right;
+						border-bottom:none;
+						box-sizing:border-box;
+
+						@include susy-media($small) {
+							float:left;
+							width: 6em;
+						}
+
+						input{
+							border:none;
+						}
+						span{
+							font-size: 1.4em;
+							color:white;
+						}
+					}
+				}
+			}
+
+			span.border{
+				border-bottom: 1px solid white;
+				height:1px;
+				display: inline-block;
+				position:absolute;
+				bottom:0;
+			    left: 0;
+			    right: 0;
+				margin-left:112px;
+				margin-right:112px;	
+
+				@include susy-media($large) {	
+				    margin-left: 0!important;
+				    margin-right: 0!important;				
+				}				
+			}
+		}
+	}
+}

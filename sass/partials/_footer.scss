@@ -1,0 +1,37 @@
+footer{
+	ul{
+		width:100%;
+		min-height: 4em;
+
+		@include susy-media($small) {
+			font-size: 0.8em;
+			margin-top: -2em;
+		}
+
+		li{
+			width: auto;
+			display: inline;
+			padding-right:1em;
+			color: rgba(0, 0, 0, 0.5);
+
+			@include susy-media($small) {
+				width: 100%;
+				display: block;
+				font-size: 1.1em;
+    			padding: 0.5em 0;				
+			}
+
+			&:last-child{
+				float:right;
+				padding-right:0;
+			}
+			a{
+				color: rgba(0, 0, 0, 0.5);
+
+				&:hover{
+					color:$iwink_red;
+				}
+			}
+		}
+	}
+}
