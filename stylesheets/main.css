@@ -1022,8 +1022,14 @@ main {
                 margin-left: 75%;
                 margin-right: -100%;
                 clear: none; } }
+          main section.intro aside ul.employee li:hover {
+            background-color: rgba(255, 0, 0, 0.5);
+            cursor: pointer; }
           main section.intro aside ul.employee li img {
             max-width: 100%; }
+            main section.intro aside ul.employee li img:hover {
+              transition: all 0.2s ease-in-out;
+              transform: scale(1.2); }
   main section.info article {
     width: 100%; }
     main section.info article h2 {
